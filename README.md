@@ -56,7 +56,6 @@ Authenticate a user with their username and password.
 - **Curl Command**:
     ```sh
     curl --location --request POST 'localhost:8901/book-store/api/v1/user/login' \
-    --header 'Authorization: Bearer <JWT_TOKEN>' \
     --header 'Content-Type: application/json' \
     --data-raw '{
       "user_name": "winner12@gmail.com",
@@ -98,7 +97,6 @@ Register a new user with the required details.
 - **URL**: `localhost:8901/book-store/api/v1/user/signUp`
 - **Method**: `POST`
 - **Headers**:
-  - `Authorization: Bearer <JWT_TOKEN>`
   - `Content-Type: application/json`
 - **Request Body**:
     ```json
@@ -117,7 +115,6 @@ Register a new user with the required details.
 - **Curl Command**:
     ```sh
     curl --location --request POST 'localhost:8901/book-store/api/v1/user/signUp' \
-    --header 'Authorization: Bearer <JWT_TOKEN>' \
     --header 'Content-Type: application/json' \
     --data-raw '{
       "first_name": "kelly",
