@@ -44,7 +44,6 @@ Authenticate a user with their username and password.
 - **URL**: `localhost:8901/book-store/api/v1/user/login`
 - **Method**: `POST`
 - **Headers**:
-  - `Authorization: Bearer <JWT_TOKEN>`
   - `Content-Type: application/json`
 - **Request Body**:
     ```json
@@ -129,9 +128,130 @@ Register a new user with the required details.
     }'
     ```
 
+# Book Store Backend
+
+This project provides the backend services for a book store application. It includes functionalities for managing books, such as adding, updating, retrieving, and deleting books.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Endpoints](#api-endpoints)
+  - [Add a Book](#add-a-book)
+  - [Update a Book](#update-a-book)
+  - [Get All Books](#get-all-books)
+  - [Delete a Book](#delete-a-book)
+- [Contributing](#contributing)
+- [License](#license)
+
+
+
+## API Endpoints
+
+### Add a Book
+
+Add a new book to the store.
+
+- **URL**: `http://localhost:8901/book-store/api/v1/book`
+- **Method**: `POST`
+- **Headers**:
+  - `Authorization: Bearer <JWT_TOKEN>`
+  - `Content-Type: application/json`
+- **Request Body**:
+    ```json
+    {
+        "title": "Effective Java update",
+        "author": "Joshua Bloch",
+        "isbn": "978-0134685991",
+        "available": true
+    }
+    ```
+- **Curl Command**:
+    ```sh
+    curl --location --request POST 'http://localhost:8901/book-store/api/v1/book' \
+    --header 'Authorization: Bearer <JWT_TOKEN>' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "title": "Effective Java update",
+        "author": "Joshua Bloch",
+        "isbn": "978-0134685991",
+        "available": true
+    }'
+    ```
+
+### Update a Book
+
+Update an existing book's details.
+
+- **URL**: `http://localhost:8901/book-store/api/v1/book/{bookId}`
+- **Method**: `PUT`
+- **Headers**:
+  - `Authorization: Bearer <JWT_TOKEN>`
+  - `Content-Type: application/json`
+- **Request Body**:
+    ```json
+    {
+        "title": "Effective Java update",
+        "author": "Joshua Bloch",
+        "isbn": "978-0134685991",
+        "available": true
+    }
+    ```
+- **Curl Command**:
+    ```sh
+    curl --location -g --request PUT 'http://localhost:8901/book-store/api/v1/book/{bookId}' \
+    --header 'Authorization: Bearer <JWT_TOKEN>' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+        "title": "Effective Java update",
+        "author": "Joshua Bloch",
+        "isbn": "978-0134685991",
+        "available": true
+    }'
+    ```
+
+### Get All Books
+
+Retrieve a list of all books in the store.
+
+- **URL**: `http://localhost:8901/book-store/api/v1/book`
+- **Method**: `GET`
+- **Headers**:
+  - `Authorization: Bearer <JWT_TOKEN>`
+  - `Content-Type: application/json`
+- **Curl Command**:
+    ```sh
+    curl --location --request GET 'http://localhost:8901/book-store/api/v1/book' \
+    --header 'Authorization: Bearer <JWT_TOKEN>' \
+    --header 'Content-Type: application/json' \
+    --data-raw ''
+    ```
+
+### Delete a Book
+
+Delete a book from the store.
+
+- **URL**: `http://localhost:8901/book-store/api/v1/book/{bookId}`
+- **Method**: `DELETE`
+- **Headers**:
+  - `Authorization: Bearer <JWT_TOKEN>`
+  - `Content-Type: application/json`
+- **Curl Command**:
+    ```sh
+    curl --location -g --request DELETE 'http://localhost:8901/book-store/api/v1/book/{bookId}' \
+    --header 'Authorization: Bearer <JWT_TOKEN>' \
+    --header 'Content-Type: application/json' \
+    --data-raw ''
+    ```
+
 ## Contributing
 
 Contributions are welcome! Please submit a pull request or open an issue to discuss any changes.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
 
 ## License
 
