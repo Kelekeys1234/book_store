@@ -7,9 +7,11 @@ This project provides the backend services for a book store application. It incl
 - [Installation](#installation)
 - [Usage](#usage)
 - [API Endpoints](#api-endpoints)
+   - [User Sign Up](#user-sign-up)
+    - [Verify Contact](#verify-contact)
   - [User Login](#user-login)
-  - [Verify Contact](#verify-contact)
-  - [User Sign Up](#user-sign-up)
+
+ 
 - [Contributing](#contributing)
 - [License](#license)
 
