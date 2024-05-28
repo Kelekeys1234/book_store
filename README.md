@@ -37,57 +37,7 @@ Start the application and use the following API endpoints to interact with the u
 
 ## API Endpoints
 
-### User Login
 
-Authenticate a user with their username and password.
-
-- **URL**: `localhost:8901/book-store/api/v1/user/login`
-- **Method**: `POST`
-- **Headers**:
-  - `Content-Type: application/json`
-- **Request Body**:
-    ```json
-    {
-      "user_name": "winner12@gmail.com",
-      "password": "8888"
-    }
-    ```
-- **Curl Command**:
-    ```sh
-    curl --location --request POST 'localhost:8901/book-store/api/v1/user/login' \
-    --header 'Content-Type: application/json' \
-    --data-raw '{
-      "user_name": "winner12@gmail.com",
-      "password": "8888"
-    }'
-    ```
-
-### Verify Contact
-
-Verify the user's contact information with an OTP.
-
-- **URL**: `localhost:8901/book-store/api/v1/user/verify_contact`
-- **Method**: `PUT`
-- **Headers**:
-  - `Content-Type: application/json`
-- **Request Body**:
-    ```json
-    {
-      "type": "EMAIL",
-      "otp": "629027",
-      "contact": "9012902655"
-    }
-    ```
-- **Curl Command**:
-    ```sh
-    curl --location --request PUT 'localhost:8901/book-store/api/v1/user/verify_contact' \
-    --header 'Content-Type: application/json' \
-    --data-raw '{
-      "type": "EMAIL",
-      "otp": "629027",
-      "contact": "9012902655"
-    }'
-    ```
 
 ### User Sign Up
 
@@ -125,6 +75,60 @@ Register a new user with the required details.
       "phone_number": 9078902655,
       "user_name": "string",
       "password": "string"
+    }'
+    ```
+
+    ### Verify Contact
+
+Verify the user's contact information with an OTP.
+
+- **URL**: `localhost:8901/book-store/api/v1/user/verify_contact`
+- **Method**: `PUT`
+- **Headers**:
+  - `Content-Type: application/json`
+- **Request Body**:
+    ```json
+    {
+      "type": "EMAIL",
+      "otp": "629027",
+      "contact": "9012902655"
+    }
+    ```
+- **Curl Command**:
+    ```sh
+    curl --location --request PUT 'localhost:8901/book-store/api/v1/user/verify_contact' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+      "type": "EMAIL",
+      "otp": "629027",
+      "contact": "9012902655"
+    }'
+    ```
+
+
+
+### User Login
+
+Authenticate a user with their username and password.
+
+- **URL**: `localhost:8901/book-store/api/v1/user/login`
+- **Method**: `POST`
+- **Headers**:
+  - `Content-Type: application/json`
+- **Request Body**:
+    ```json
+    {
+      "user_name": "winner12@gmail.com",
+      "password": "8888"
+    }
+    ```
+- **Curl Command**:
+    ```sh
+    curl --location --request POST 'localhost:8901/book-store/api/v1/user/login' \
+    --header 'Content-Type: application/json' \
+    --data-raw '{
+      "user_name": "winner12@gmail.com",
+      "password": "8888"
     }'
     ```
 
